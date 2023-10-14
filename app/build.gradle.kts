@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "id.ac.umn.melvintungadi.map_project_group2"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "id.ac.umn.melvintungadi.map_project_group2"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -21,18 +21,24 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
 }
 
 dependencies {
