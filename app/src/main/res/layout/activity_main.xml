@@ -6,17 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/top_app_bar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/app_name"
-        android:textSize="24sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary_color"
+            android:minHeight="?attr/actionBarSize"
+            app:titleTextColor="@color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_item1"
@@ -29,22 +35,60 @@
         app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/top_app_bar">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/light_primary_color"
             android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/groceries" />
 
             <TextView
                 android:id="@+id/card_name1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="20dp"
-                android:text="@string/placeholder"
-                android:textAlignment="center"
-                android:textSize="20sp"
+                android:layout_marginEnd="5dp"
+                android:layout_toEndOf="@+id/imageView1"
+                android:text="@string/item1"
+                android:textAlignment="textStart"
+                android:textSize="28sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/card_location1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_name1"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toEndOf="@+id/imageView1"
+                android:text="@string/location1"
+                android:textAlignment="textStart"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/card_exp1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_location1"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toEndOf="@+id/imageView1"
+                android:text="@string/exp1"
+                android:textAlignment="textStart"
+                android:textSize="16sp" />
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
@@ -54,7 +98,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         app:cardBackgroundColor="#B6B6B6"
         app:cardCornerRadius="15dp"
@@ -65,17 +109,55 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/light_primary_color"
             android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/groceries" />
 
             <TextView
                 android:id="@+id/card_name2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="20dp"
-                android:text="@string/placeholder"
-                android:textAlignment="center"
-                android:textSize="20sp"
+                android:layout_marginEnd="5dp"
+                android:layout_toEndOf="@+id/imageView2"
+                android:text="@string/item2"
+                android:textAlignment="textStart"
+                android:textSize="28sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/card_location2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_name2"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toEndOf="@+id/imageView2"
+                android:text="@string/location2"
+                android:textAlignment="textStart"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/card_exp2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_location2"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toEndOf="@+id/imageView2"
+                android:text="@string/exp2"
+                android:textAlignment="textStart"
+                android:textSize="16sp" />
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
@@ -84,13 +166,14 @@
         android:id="@+id/add_item"
         android:layout_width="60dp"
         android:layout_height="70dp"
-        android:layout_marginTop="640dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/accent_color"
         android:gravity="center"
         android:text="@string/add_button"
         android:textSize="24sp"
+        app:cornerRadius="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,105 +6,152 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/name_wrapper"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/top_app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary_color"
+            android:minHeight="?attr/actionBarSize"
+            app:titleTextColor="@color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginStart="340dp"
+        android:text="@string/save"
+        android:textSize="16sp"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/top_app_bar"
+        app:layout_constraintEnd_toEndOf="@+id/top_app_bar"
+        app:layout_constraintStart_toStartOf="@+id/top_app_bar"
+        app:layout_constraintTop_toTopOf="@+id/top_app_bar" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/item_name_container"
+        style="?attr/textInputFilledStyle"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="@string/item_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_app_bar">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/item_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/item_name"
-            android:inputType="text" />
-
+            android:backgroundTint="@color/text_fill" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/location_wrapper"
-        android:layout_width="match_parent"
+        android:id="@+id/item_location_container"
+        style="?attr/textInputFilledStyle"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
+        android:hint="@string/item_location"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_wrapper">
+        app:layout_constraintTop_toBottomOf="@+id/item_name_container">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/item_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/item_location" />
+            android:backgroundTint="@color/text_fill" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/qty_wrapper"
-        android:layout_width="match_parent"
+        android:id="@+id/item_qty_container"
+        style="?attr/textInputFilledStyle"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
+        android:hint="@string/item_qty"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/location_wrapper">
+        app:layout_constraintTop_toBottomOf="@+id/item_location_container">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/item_qty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/item_qty"
+            android:backgroundTint="@color/text_fill"
             android:inputType="number" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/exp_wrapper"
-        android:layout_width="match_parent"
+        android:id="@+id/item_exp_container"
+        style="?attr/textInputFilledStyle"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
+        android:hint="@string/item_exp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/qty_wrapper">
+        app:layout_constraintTop_toBottomOf="@+id/item_qty_container">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/item_exp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/item_exp"
-            android:inputType="datetime|date" />
+            android:backgroundTint="@color/text_fill" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/item_notes"
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="@string/item_notes"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exp_wrapper" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/date_button"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="8dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/divider_color"
+        app:cornerRadius="5dp"
+        app:icon="@drawable/calendar"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconTint="@color/primary_text"
+        app:layout_constraintBottom_toBottomOf="@+id/item_exp_container"
+        app:layout_constraintEnd_toEndOf="@+id/item_exp_container"
+        app:layout_constraintTop_toTopOf="@+id/item_exp_container" />
 
-    <Button
-        android:id="@+id/save_button"
-        android:layout_width="120dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/item_notes_container"
+        style="?attr/textInputFilledStyle"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/save_button"
+        android:hint="@string/item_notes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_notes" />
+        app:layout_constraintTop_toBottomOf="@+id/item_exp_container">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/item_notes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/text_fill"
+            android:gravity="top"
+            android:inputType="text|textMultiLine"
+            android:lines="6"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:scrollHorizontally="false" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

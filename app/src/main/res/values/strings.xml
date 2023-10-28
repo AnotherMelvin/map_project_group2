@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Exp Date Tracker</string>
+    <string name="app_name">Expire Date Tracker</string>
     <string name="item_name">Name</string>
     <string name="item_location">Location</string>
     <string name="item_qty">Quantity</string>
@@ -7,5 +7,12 @@
     <string name="item_notes">Notes</string>
     <string name="add_button">+</string>
     <string name="save_button">Save</string>
-    <string name="placeholder">Placeholder</string>
+    <string name="placeholder">…</string>
+    <string name="item1">Item 1</string>
+    <string name="location1">Top Drawer</string>
+    <string name="exp1">21/1/2024</string>
+    <string name="item2">Item Name</string>
+    <string name="location2">Item Location</string>
+    <string name="exp2">Item Exp Date</string>
+    <string name="save">Save</string>
 </resources>
